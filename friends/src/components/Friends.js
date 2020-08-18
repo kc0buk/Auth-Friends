@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import Friend from './Friend'
+import AddFriend from './AddFriend'
 
 const Friends = () => {
     const [friendsArr, setFriendsArr] = useState([])
@@ -24,6 +25,7 @@ const Friends = () => {
 
     return (
         <section>
+            <AddFriend setFriends={setFriendsArr} Fetching={setFetching} />
             {fetching ? <h4>Loading ...</h4> : <Friend friends={friendsArr} />}
         </section>
     )
