@@ -22,8 +22,8 @@ const Login = () => {
     const login = (event) => {
         event.preventDefault()
         setIsLoading(true)
-        console.log(event)
-        console.log(credentials)
+        // console.log(event)
+        // console.log(credentials)
         axiosWithAuth()
         .post('/api/login', credentials)
         .then( res => {

@@ -38,4 +38,20 @@ export function ProtectedRoute(props) {
   );
 }
 
+export function ProtectedRoutes(props) {
+  const { children, ...rest } = props;
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        return localStorage.getItem("token") ? (
+          children
+        ) : (
+          <Redirect to="/login" />
+        );
+      }}
+    />
+  );
+}
+
 **************/
